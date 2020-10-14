@@ -3,9 +3,10 @@ import { Switch, Route } from 'react-router-dom';
 
 import './App.css';
 
-import HomePage from './pages/homepage/homepage.component.jsx';
-import ShopPage from './pages/shop/shop.component.jsx';
-import Header from './components/header/header.component.jsx';
+import HomePage from './pages/homepage/homepage.component';
+import ShopPage from './pages/shop/shop.component';
+import Header from './components/header/header.component';
+import LoginAndRegisterPage from './pages/login-and-register/login-and-register.component';
 
 function App() {
   return (
@@ -13,6 +14,7 @@ function App() {
       <Header/>
       <Switch>
         <Route exact path='/' component={HomePage}/>
+        <Route path='/login' component={LoginAndRegisterPage}/>
         <Route path='/shop' component={ShopPage}/>
       </Switch>
     </div>
