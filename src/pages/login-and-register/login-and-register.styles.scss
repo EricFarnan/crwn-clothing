@@ -1,0 +1,30 @@
+.container {
+
+    .photoFrame{
+        width: 49%;
+        height: 500px;
+        margin: 8px;
+        margin-top: 20px;
+        border: 2px solid black;
+        float: left;
+        overflow: hidden;
+        opacity: 0.9;
+
+        background-position: center;
+        background-size: cover;
+    }
+
+    .loginRegisterFrame {
+        text-align: center;
+        margin: auto;
+        padding-left: 10px;
+        padding-right: 10px;
+        padding-bottom: 15px;
+        background-color: white;
+        border: 3px solid black;
+        position: fixed;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+}

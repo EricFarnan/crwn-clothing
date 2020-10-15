@@ -7,7 +7,7 @@ import HomePage from './pages/homepage/homepage.component';
 import ShopPage from './pages/shop/shop.component';
 import Header from './components/header/header.component';
 import LoginAndRegisterPage from './pages/login-and-register/login-and-register.component';
-import { auth } from './firebase/firebase.utils';
+import { auth, createUserProfileDocument } from './firebase/firebase.utils';
 
 class App extends React.Component {
   constructor() {
@@ -21,12 +21,35 @@ class App extends React.Component {
   // firebase auth management
   unsubscribeFromAuth = null;
 
-  // when the app component loads it will set the state of the current user 
   componentDidMount() {
-    this.unsubscribeFromAuth = auth.onAuthStateChanged(user => {
-      this.setState({currentUser: user})
+    this.unsubscribeFromAuth = auth.onAuthStateChanged(async userAuth => {
 
-      console.log(user);
+      // if the user signs in the userAuth object will have data
+      if (userAuth) {
+        // get the userReference from attempting to add the user to the db
+        const userRef = await createUserProfileDocument(userAuth);
+
+        console.log(this.state);
+
+        // get a snapshot of the userRef and set the state values of the currentUser to the data from the snapshot
+        userRef.onSnapshot(snapShot => {
+          this.setState({
+            currentUser: {
+              id: snapShot.id,
+              ...snapShot.data()
+            }
+          },
+          // callback 
+            () => {
+              console.log(this.state);
+          })
+        });      
+      } 
+      // if the user is signing out the userAuth object will be null
+      else {
+        // set the current user to null
+        this.setState({currentUser: userAuth});
+      }  
     });
   }
 
