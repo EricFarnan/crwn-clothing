@@ -13,7 +13,7 @@ const LoginAndRegisterPage = () => (
         <div className='loginRegisterFrame'>
             {/* TODO: let child components change each other's visibility */}
             {
-                false ? <Login/>
+                true ? <Login/>
                 : <Register/>
             }
         </div>

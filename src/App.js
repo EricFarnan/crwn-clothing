@@ -29,8 +29,6 @@ class App extends React.Component {
         // get the userReference from attempting to add the user to the db
         const userRef = await createUserProfileDocument(userAuth);
 
-        console.log(this.state);
-
         // get a snapshot of the userRef and set the state values of the currentUser to the data from the snapshot
         userRef.onSnapshot(snapShot => {
           this.setState({
@@ -38,10 +36,6 @@ class App extends React.Component {
               id: snapShot.id,
               ...snapShot.data()
             }
-          },
-          // callback 
-            () => {
-              console.log(this.state);
           })
         });      
       } 
