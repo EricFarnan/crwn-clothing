@@ -1,7 +1,7 @@
 import React from 'react';
 import Login from '../../components/login/login.component';
 import Register from '../../components/register/register.component';
-import './login-and-register.styles.scss'
+import './login-and-register.styles.scss';
 
 const LoginAndRegisterPage = () => (
 
