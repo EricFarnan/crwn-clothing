@@ -48,9 +48,6 @@ class Login extends React.Component {
                     <CustomButton type="button" onClick={signInWithGoogle} isGoogleSignIn>SIGN IN WITH GOOGLE</CustomButton>
                     </div>
                 </form>
-
-                {/* Not going to be a link but this needs to send data back to the parent to change the ternary operator value */}
-                <p className='toRegister'>Don't have an account yet?</p>
             </div>
         )
     }

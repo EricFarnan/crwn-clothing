@@ -77,7 +77,6 @@ class Register extends React.Component {
                     </div>
                            
                 </form>
-                <p className='toLogin'>Already have an account?</p>
             </div>
         )
     }

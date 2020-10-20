@@ -1,6 +1,6 @@
 .login {
     width: 380px;
-    height: 425px;
+    height: 365px;
     display: flex;
     flex-direction: column;
     
@@ -11,9 +11,5 @@
     .buttons {
         display: flex;
         justify-content: space-between;
-    }
-
-    .toRegister {
-        margin-top: 30px;
     }
 }
