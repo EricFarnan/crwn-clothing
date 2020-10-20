@@ -29,4 +29,27 @@
         margin-left: auto;
         font-size: 36px;
       }
+
+      button {
+          width: 10%;
+          margin-left: auto;
+          margin-top: 50px;
+      }
+
+    .test-warning {
+        text-align: center;
+        margin-top: 25px;
+        font-size: 24px;
+        color: red;
+    }
+}
+
+.empty-cart {
+    font-size: 44px;
+    min-height: 90vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: auto;
+    padding-top: 15%;
 }
