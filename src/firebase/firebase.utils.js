@@ -27,7 +27,7 @@ const config = {
       const { displayName, email } = userAuth;
       const createdAt = new Date();
 
-      // Attempt to set the user's data in the db async
+      // Attempt to create the user's data in the db async
       try {
         await userRef.set({
           displayName, 

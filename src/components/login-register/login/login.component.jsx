@@ -24,7 +24,13 @@ class Login extends React.Component {
             this.setState({email: '', password: ''})
         }
         catch (error) {
-            console.log(error);
+            if (error.code === 'auth/user-not-found' ||
+                error.code === 'auth/wrong-password') {
+                alert('Username or password was not correct.');
+            }
+            else {
+                alert('An unknown login error occured.');
+            }
         }
     }
 
